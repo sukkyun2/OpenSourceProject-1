@@ -134,6 +134,9 @@ public class ExerciseActivity extends AppCompatActivity
     //이동거리 관련 변수
     private double distance=0;
 
+    //타이머관련변수
+    long exerciseTime;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,18 +183,21 @@ public class ExerciseActivity extends AppCompatActivity
                 MillisecondTime = SystemClock.uptimeMillis() - StartTime;
                 UpdateTime = TimeBuff + MillisecondTime;
                 Seconds = (int) (UpdateTime / 1000);
+                exerciseTime=Seconds;
                 Minutes = Seconds / 60;
                 Seconds = Seconds % 60;
 
-//                System.out.println("Minutes :" +Minutes);
-//                System.out.println("Second :" +Seconds);
-
+                //타이머
                 textView.setText("" + String.format("%02d", Minutes)
                         + ":"
                         + String.format("%02d", Seconds));
-                tvCalorie.setText(""+String.format("%d",mStepDetector/30));
-//                tvSpeed.setText(String.format("%d",distance/100)"");
-                /**speed부분 좀만 더 생각해보기**/
+
+                //소모 칼로리
+                tvCalorie.setText(""+String.format("%d",mStepDetector/30)+"kcal");
+                //이동거리
+                tvDistance.setText(""+String.format("%f",distance/100.00)+"km");
+                //속도
+                tvSpeed.setText(""+String.format("%d",distance/exerciseTime+"km/h"));
 
                 handler.postDelayed(this, 0);
             }
@@ -243,6 +249,8 @@ public class ExerciseActivity extends AppCompatActivity
 
                 changeWalkState();        //걸음 상태 변경
 
+                stopExercise();
+
             }
 
         });
@@ -252,6 +260,17 @@ public class ExerciseActivity extends AppCompatActivity
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerormeterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+    }
+
+    private void stopExercise() {
+        //추후에 이미지 추가해야함
+        ExerciseRecord exerciseRecord=new ExerciseRecord(exerciseTime,distance,mStepDetector/30,mStepDetector);
+
+        Intent intent = new Intent(getApplicationContext(), ExerciseResultActivity.class);
+        intent.putExtra("RECORD", exerciseRecord);
+
+        startActivity(intent);
 
     }
 
