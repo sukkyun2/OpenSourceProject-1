@@ -9,15 +9,15 @@ public class ExerciseRecord implements Serializable {
     double execiseDistance; //운동 거리
     int exerciseCalorie; //소모 칼로리
     int exerciseStep; //걸음수
-    Date exerciseDate; //운동날짜
+    String exerciseDate; //운동날짜
     //이미지
 
-    public ExerciseRecord(long exerciseTime, double execiseDistance, int exerciseCalorie, int exerciseStep) {
+    public ExerciseRecord(long exerciseTime, double execiseDistance, int exerciseCalorie, int exerciseStep, String exerciseDate) {
         this.exerciseTime = exerciseTime;
         this.execiseDistance = execiseDistance;
         this.exerciseCalorie = exerciseCalorie;
         this.exerciseStep = exerciseStep;
-        this.exerciseDate = new Date();
+        this.exerciseDate = exerciseDate;
     }
 
     public long getExerciseTime() {
@@ -52,11 +52,11 @@ public class ExerciseRecord implements Serializable {
         this.exerciseStep = exerciseStep;
     }
 
-    public Date getExerciseDate() {
+    public String getExerciseDate() {
         return exerciseDate;
     }
 
-    public void setExerciseDate(Date exerciseDate) {
+    public void setExerciseDate(String exerciseDate) {
         this.exerciseDate = exerciseDate;
     }
 }

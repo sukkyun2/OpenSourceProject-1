@@ -19,10 +19,6 @@ public class ExerciseResultActivity extends AppCompatActivity {
 
     ViewPager vp;
 
-    //FireBase
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference databaseReference;
-
     Fragment resultFragment;
     Fragment recordFragment;
 
@@ -33,30 +29,29 @@ public class ExerciseResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_result);
 
-//        firebaseDatabase=FirebaseDatabase.getInstance();
-//        databaseReference=firebaseDatabase.getReference();
+        Intent intent=getIntent();
+        exerciseRecord=(ExerciseRecord)intent.getSerializableExtra("RECORD");
 
-//        Intent intent=getIntent();
-//        exerciseRecord=(ExerciseRecord)intent.getSerializableExtra("RECORD");
-//
-//        recordFragment=new RecordFragment();
-//        resultFragment=new ResultFragment();
-//
-//        Bundle bundle=new Bundle();
-//        bundle.putSerializable("RECORD",exerciseRecord);
-//
-//        resultFragment.setArguments(bundle);
-//        recordFragment.setArguments(bundle);
+        Bundle bundle1=new Bundle();
+        bundle1.putSerializable("RECORD",exerciseRecord);
+
+        Bundle bundle2=new Bundle();
+        bundle2.putSerializable("RECORD",exerciseRecord);
+
+        recordFragment=new RecordFragment();
+        resultFragment=new ResultFragment();
+
+        resultFragment.setArguments(bundle1);
+        recordFragment.setArguments(bundle2);
 
         vp=findViewById(R.id.vp);
 
         vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
         vp.setCurrentItem(0);
 
-//        insertExerciseRecord(exerciseRecord);
-
     }
 
+    //View Pager에 관련된 Adapter
     private class pagerAdapter extends FragmentStatePagerAdapter{
 
         private int NUM_ITEMS=2;

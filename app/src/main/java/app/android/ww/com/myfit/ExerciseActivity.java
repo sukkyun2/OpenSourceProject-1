@@ -51,7 +51,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -170,6 +172,7 @@ public class ExerciseActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         createLocationRequest();
+        createFileRequest();
 
         /** 타이머 관련 **/
         textView = findViewById(R.id.textView);
@@ -195,10 +198,12 @@ public class ExerciseActivity extends AppCompatActivity
                 //소모 칼로리
                 tvCalorie.setText(""+String.format("%d",mStepDetector/30)+"kcal");
                 //이동거리
-                tvDistance.setText(""+String.format("%f",distance/100.00)+"km");
+                tvDistance.setText(""+String.format("%.2f",distance/1000.00)+"km");
                 //속도
-                tvSpeed.setText(""+String.format("%d",distance/exerciseTime+"km/h"));
+                tvSpeed.setText(""+String.format("%.2f",(distance/100.0)/exerciseTime)+"km/h");
 
+                Log.d("exercise","이동거리 : "+ String.format("%f",distance/1000.00));
+                Log.d("exercise","속도 : "+ String.format("%f",(distance/100.0)/exerciseTime));
                 handler.postDelayed(this, 0);
             }
         };
@@ -232,22 +237,33 @@ public class ExerciseActivity extends AppCompatActivity
                 TimeBuff += MillisecondTime;
                 handler.removeCallbacks(runnable);
 
-                //파일쓰기 퍼미션설정
-                String[] perms ={Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                int permsRequestCode=200;
-                requestPermissions(perms,permsRequestCode);
-
-                //권한이 부여됐는지 확인
-                int writeCheck=ContextCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.READ_EXTERNAL_STORAGE);
-                int readCheck=ContextCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-                if(writeCheck!=PackageManager.PERMISSION_GRANTED && readCheck!=PackageManager.PERMISSION_GRANTED){
-                    System.out.println("파일 권한 부여됨");
-                }else{
-                    System.out.println("다시 권한부여 필요");
-                }
-
                 changeWalkState();        //걸음 상태 변경
+
+                //Screen Shot
+                mMap.snapshot(new GoogleMap.SnapshotReadyCallback() {
+                    @Override
+                    public void onSnapshotReady(Bitmap snapshot) {
+                        if (snapshot == null){}
+                        else {
+                            File fileCacheItem = new File("/sdcard/1.png");
+                            OutputStream out = null;
+                            try {
+                                fileCacheItem.createNewFile();
+                                out = new FileOutputStream(fileCacheItem);
+                                snapshot.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                                System.out.println("스크린샷 저장완료");
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            } finally {
+                                try {
+                                    out.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    }
+                });
 
                 stopExercise();
 
@@ -263,14 +279,52 @@ public class ExerciseActivity extends AppCompatActivity
 
     }
 
+    private void createFileRequest(){
+        //파일쓰기 퍼미션설정
+        String[] perms ={Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        int permsRequestCode=200;
+        requestPermissions(perms,permsRequestCode);
+
+        //권한이 부여됐는지 확인
+        int writeCheck=ContextCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.READ_EXTERNAL_STORAGE);
+        int readCheck=ContextCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if(writeCheck!=PackageManager.PERMISSION_GRANTED && readCheck!=PackageManager.PERMISSION_GRANTED){
+            System.out.println("파일 권한 부여됨");
+        }else{
+            System.out.println("다시 권한부여 필요");
+        }
+    }
+
     private void stopExercise() {
         //추후에 이미지 추가해야함
-        ExerciseRecord exerciseRecord=new ExerciseRecord(exerciseTime,distance,mStepDetector/30,mStepDetector);
+        Date now = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+
+
+        long Time=exerciseTime;
+        double Distance=Double.parseDouble(String.format("%.2f",distance/1000.00));
+        int Calorie=mStepDetector/30;
+        int Step=mStepDetector;
+        String Date=format.format(now);
+
+
+
+
+        ExerciseRecord exerciseRecord = new ExerciseRecord(Time,Distance,Calorie,Step,Date);
+
+//        System.out.println("distance : "+Distance);
+//        System.out.println("레코드 객체 :"+exerciseRecord.exerciseDate+" "+exerciseRecord.execiseDistance+" "+exerciseRecord.exerciseCalorie+" "+exerciseRecord.exerciseStep+" "+exerciseRecord.exerciseTime);
+
+
+
 
         Intent intent = new Intent(getApplicationContext(), ExerciseResultActivity.class);
-        intent.putExtra("RECORD", exerciseRecord);
-
+//        intent.putExtra("RECORD",exerciseRecord);
+        LoginUtil.RECORD=exerciseRecord;
         startActivity(intent);
+
+        System.out.println("id :"+LoginUtil.USERID+" "+"record : "+LoginUtil.RECORD);
 
     }
 
@@ -350,32 +404,6 @@ public class ExerciseActivity extends AppCompatActivity
         }else{
             Toast.makeText(getApplicationContext(), "걸음 종료", Toast.LENGTH_SHORT).show();
             walkState = false;
-
-            //Screen Shot
-            mMap.snapshot(new GoogleMap.SnapshotReadyCallback() {
-                @Override
-                public void onSnapshotReady(Bitmap snapshot) {
-                    if (snapshot == null){}
-                    else {
-                        File fileCacheItem = new File("/sdcard/1.png");
-                        OutputStream out = null;
-                        try {
-                            fileCacheItem.createNewFile();
-                            out = new FileOutputStream(fileCacheItem);
-                            snapshot.compress(Bitmap.CompressFormat.JPEG, 100, out);
-                            System.out.println("스크린샷 저장완료");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        } finally {
-                            try {
-                                out.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                }
-            });
         }
     }
 
