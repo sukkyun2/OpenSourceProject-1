@@ -1,24 +1,33 @@
 package app.android.ww.com.myfit;
 
-import java.io.Serializable;
-import java.util.Date;
+public class ExerciseRecord {
 
-public class ExerciseRecord implements Serializable {
-
+    String userId; //운동한 사람
     long exerciseTime; //운동 시간
     double execiseDistance; //운동 거리
     int exerciseCalorie; //소모 칼로리
     int exerciseStep; //걸음수
     String exerciseDate; //운동날짜
-    //이미지
+    String exerciseComment; //메모
 
-    public ExerciseRecord(long exerciseTime, double execiseDistance, int exerciseCalorie, int exerciseStep, String exerciseDate) {
+    public ExerciseRecord(){}
+
+    public ExerciseRecord(String userid, long exerciseTime, double execiseDistance, int exerciseCalorie, int exerciseStep, String exerciseDate) {
+        this.userId = userid;
         this.exerciseTime = exerciseTime;
         this.execiseDistance = execiseDistance;
         this.exerciseCalorie = exerciseCalorie;
         this.exerciseStep = exerciseStep;
         this.exerciseDate = exerciseDate;
     }
+
+    public String getUserId() { return userId; }
+
+    public void setUserId(String userId) { this.userId = userId; }
+
+    public String getExerciseComment() { return exerciseComment; }
+
+    public void setExerciseComment(String exerciseComment) { this.exerciseComment = exerciseComment; }
 
     public long getExerciseTime() {
         return exerciseTime;
@@ -32,9 +41,7 @@ public class ExerciseRecord implements Serializable {
         return execiseDistance;
     }
 
-    public void setExeciseDistance(double execiseDistance) {
-        this.execiseDistance = execiseDistance;
-    }
+    public void setExeciseDistance(double execiseDistance) { this.execiseDistance = execiseDistance; }
 
     public int getExerciseCalorie() {
         return exerciseCalorie;

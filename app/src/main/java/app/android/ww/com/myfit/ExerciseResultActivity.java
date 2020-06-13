@@ -19,30 +19,10 @@ public class ExerciseResultActivity extends AppCompatActivity {
 
     ViewPager vp;
 
-    Fragment resultFragment;
-    Fragment recordFragment;
-
-    ExerciseRecord exerciseRecord;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_result);
-
-        Intent intent=getIntent();
-        exerciseRecord=(ExerciseRecord)intent.getSerializableExtra("RECORD");
-
-        Bundle bundle1=new Bundle();
-        bundle1.putSerializable("RECORD",exerciseRecord);
-
-        Bundle bundle2=new Bundle();
-        bundle2.putSerializable("RECORD",exerciseRecord);
-
-        recordFragment=new RecordFragment();
-        resultFragment=new ResultFragment();
-
-        resultFragment.setArguments(bundle1);
-        recordFragment.setArguments(bundle2);
 
         vp=findViewById(R.id.vp);
 
@@ -78,6 +58,4 @@ public class ExerciseResultActivity extends AppCompatActivity {
             return NUM_ITEMS;
         }
     }
-
-
 }
