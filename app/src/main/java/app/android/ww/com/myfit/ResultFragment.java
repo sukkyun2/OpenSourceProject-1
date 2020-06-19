@@ -70,15 +70,15 @@ public class ResultFragment extends Fragment {
             System.out.println("걸음수 :" + exerciseRecord.exerciseStep);
             System.out.println("운동날짜 :" + exerciseRecord.exerciseDate);
 
-            tvExerciseTime.setText("운동 시간 : " +
+            tvExerciseTime.setText(
                     String.format("%d", exerciseRecord.exerciseTime));
-            tvExerciseDistance.setText("운동 거리 : " +
+            tvExerciseDistance.setText(
                     String.format("%.2f", exerciseRecord.execiseDistance));
-            tvExerciseCalorie.setText("소모 칼로리 : " +
+            tvExerciseCalorie.setText(
                     String.format("%d", exerciseRecord.exerciseCalorie));
-            tvExerciseStep.setText("걸음수 :" +
+            tvExerciseStep.setText(
                     String.format("%d", exerciseRecord.exerciseStep));
-            tvExerciseDate.setText("운동날짜 : " +
+            tvExerciseDate.setText(
                     exerciseRecord.exerciseDate);
 //        roadImage();
 

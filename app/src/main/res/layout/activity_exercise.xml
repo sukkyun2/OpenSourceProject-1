@@ -10,56 +10,58 @@
 
     <TextView
         android:id="@+id/distance2"
-        android:layout_width="109dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:text="이동거리"
+        android:fontFamily="@font/cookie_run_regular"
+        android:text="거리(km)"
         android:textAlignment="center"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/calorie2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/distance" />
 
     <TextView
         android:id="@+id/calorie2"
-        android:layout_width="93dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
-        android:text="소모 칼로리"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="23dp"
+        android:fontFamily="@font/cookie_run_regular"
+        android:text="칼로리(kcal)"
         android:textAlignment="center"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/distance"
-        app:layout_constraintStart_toEndOf="@+id/speed"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toStartOf="@+id/distance2"
+        app:layout_constraintStart_toEndOf="@+id/speed2"
+        app:layout_constraintTop_toBottomOf="@+id/calorie" />
 
     <TextView
         android:id="@+id/speed2"
-        android:layout_width="83dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:text="속도"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="34dp"
+        android:fontFamily="@font/cookie_run_regular"
+        android:text="속도(분/km)"
         android:textAlignment="center"
         android:textSize="15dp"
         app:layout_constraintEnd_toStartOf="@+id/calorie2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/distance2">
 
         <fragment
             android:id="@+id/map"
@@ -71,10 +73,12 @@
 
         <TextView
             android:id="@+id/tvStepDetector"
-            android:layout_width="127dp"
+            android:layout_width="117dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
+            android:fontFamily="@font/cookie_run_regular"
             android:text="걸음수 : 0"
+            android:textColor="@color/design_default_color_on_secondary"
             android:textSize="25dp"
             android:visibility="visible"
             tools:layout_editor_absoluteX="332dp"
@@ -83,31 +87,32 @@
 
     <TextView
         android:id="@+id/calorie"
-        android:layout_width="93dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="23dp"
+        android:fontFamily="@font/cookie_run_bold"
         android:text="0kcal"
         android:textAlignment="center"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/distance"
         app:layout_constraintStart_toEndOf="@+id/speed"
-        app:layout_constraintTop_toBottomOf="@+id/calorie2"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/speed"
-        android:layout_width="83dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="34dp"
+        android:fontFamily="@font/cookie_run_bold"
         android:text="0km/h"
         android:textAlignment="center"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/calorie"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speed2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
@@ -115,31 +120,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="68dp"
+        android:fontFamily="@font/cookie_run_regular"
         android:text="00:00"
-        android:textColor="#009688"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/distance"
-        android:layout_width="109dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/cookie_run_bold"
         android:text="0.00km"
         android:textAlignment="center"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/distance2" />
+        app:layout_constraintStart_toEndOf="@+id/calorie"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/start"
@@ -148,15 +153,14 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/cookie_run_regular"
         android:text="Start"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pause"
-        app:layout_constraintStart_toEndOf="@+id/stop"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/stop" />
 
     <Button
         android:id="@+id/pause"
@@ -165,11 +169,13 @@
         android:layout_alignBaseline="@+id/start"
         android:layout_alignBottom="@+id/start"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/cookie_run_regular"
         android:text="Pause"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/start" />
 
     <Button
         android:id="@+id/stop"
@@ -178,11 +184,26 @@
         android:layout_alignTop="@+id/pause"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/cookie_run_regular"
         android:text="Stop"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/start"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_star" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

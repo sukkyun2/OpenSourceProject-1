@@ -4,69 +4,289 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExerciseResultActivity">
+    tools:context=".ExerciseResultActivity"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/tvExerciseTime"
-        android:layout_width="128dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="117dp"
-        android:text="운동시간 : "
-        app:layout_constraintBottom_toTopOf="@+id/tvExerciseStep"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvExerciseDistance"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="114dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="운동거리 :"
-        app:layout_constraintBottom_toTopOf="@+id/tvExerciseCalorie"
-        app:layout_constraintStart_toStartOf="@+id/tvExerciseTime"
-        app:layout_constraintTop_toBottomOf="@+id/tvExerciseTime" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/tvExerciseCalorie"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/baseline_today_black_18dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExerciseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="yy-mm-ss"
+                android:textAlignment="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="운동 날짜"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="114dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="322dp"
-        android:text="소모 칼로리 :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvExerciseDistance"
-        app:layout_constraintTop_toBottomOf="@+id/tvExerciseDistance" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
-    <TextView
-        android:id="@+id/tvExerciseStep"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/baseline_do_not_step_black_18dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExerciseStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="걸음수"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="114dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="265dp"
-        android:text="걸음수 :"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvExerciseCalorie"
-        app:layout_constraintTop_toBottomOf="@+id/tvExerciseTime" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+        <ImageView
+            android:id="@+id/imageView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/baseline_whatshot_black_18dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExerciseCalorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="0kcal"
+                android:textAlignment="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="칼로리"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line">
+
+        <ImageView
+            android:id="@+id/imageView512"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/twotone_timer_black_18dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExerciseTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="운동 시간"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="76dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="217dp"
+        android:id="@+id/exit"
+        android:layout_width="141dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/cookie_run_bold"
         android:text="운동 종료"
-        app:layout_constraintBottom_toTopOf="@+id/tvExerciseDate"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvExerciseDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
-        android:text="운동날짜 :"
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="351dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvExerciseStep"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/result" />
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="352dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/cookie_run_regular"
+        android:text="운동 상세정보 -----------------------------"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exit" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout7"
+        app:layout_constraintTop_toBottomOf="@+id/line">
+
+        <ImageView
+            android:id="@+id/imageView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cookie_run_regular"
+            app:srcCompat="@drawable/baseline_swap_calls_black_18dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExerciseDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="0.00km"
+                android:textAlignment="center"
+                android:textColor="@color/design_default_color_on_secondary"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cookie_run_regular"
+                android:text="운동 거리"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

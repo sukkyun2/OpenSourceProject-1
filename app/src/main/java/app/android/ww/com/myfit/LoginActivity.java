@@ -58,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button mEmailSignInButton = findViewById(R.id.email_sign_in_button); // sign in button
-        Button mEmailSignUpButton = findViewById(R.id.email_sign_up_button); // sign up button
+        Button mEmailSignInButton = findViewById(R.id.email_sign_in_button); // sign in round_button
+        Button mEmailSignUpButton = findViewById(R.id.email_sign_up_button); // sign up round_button
 
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
