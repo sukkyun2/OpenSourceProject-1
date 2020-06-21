@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.android.ww.com.myfit">
 
-
-
     <!-- Google Map -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -35,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ExerciseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -50,7 +49,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity">
-            <!--android:label="@string/title_activity_login" -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -63,6 +61,17 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".PostDetail"
+            android:label="@string/title_activity_dsadasd"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
         </activity>
     </application>
 

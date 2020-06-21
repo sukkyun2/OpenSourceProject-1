@@ -1,6 +1,8 @@
 package app.android.ww.com.myfit;
 
-public class ExerciseRecord {
+import java.io.Serializable;
+
+public class ExerciseRecord implements Serializable {
 
     String userId; //운동한 사람
     long exerciseTime; //운동 시간
@@ -8,7 +10,7 @@ public class ExerciseRecord {
     int exerciseCalorie; //소모 칼로리
     int exerciseStep; //걸음수
     String exerciseDate; //운동날짜
-    String exerciseComment; //메모
+//    String exerciseComment; //메모
 
     public ExerciseRecord(){}
 
@@ -25,9 +27,9 @@ public class ExerciseRecord {
 
     public void setUserId(String userId) { this.userId = userId; }
 
-    public String getExerciseComment() { return exerciseComment; }
-
-    public void setExerciseComment(String exerciseComment) { this.exerciseComment = exerciseComment; }
+//    public String getExerciseComment() { return exerciseComment; }
+//
+//    public void setExerciseComment(String exerciseComment) { this.exerciseComment = exerciseComment; }
 
     public long getExerciseTime() {
         return exerciseTime;

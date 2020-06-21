@@ -37,27 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         firebaseDatabase=FirebaseDatabase.getInstance();
         mDatabase=firebaseDatabase.getReference();
 
-        mEmailView.setOnEditorActionListener(new TextView.OnEditorActionListener()
-        {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if(id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL){
-                    return true;
-                }
-                return false;
-            }
-
-        });
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    return true;
-                }
-                return false;
-            }
-        });
-
         Button mEmailSignInButton = findViewById(R.id.email_sign_in_button); // sign in round_button
         Button mEmailSignUpButton = findViewById(R.id.email_sign_up_button); // sign up round_button
 
@@ -69,14 +48,16 @@ public class LoginActivity extends AppCompatActivity {
 
                 mDatabase.child("users").child(id).child("userId").setValue(id);
 
-                //나중에 아이디랑 닉네임을 받던가 해야될듯
-
                 Toast.makeText(getApplicationContext(), LoginUtil.USERID+"님 환영합니다.", Toast.LENGTH_LONG).show();
 
-
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                /** 일시적으로 운동하기로 감 **/
+                Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
                 startActivity(intent);
                 finish();
+
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         });
 
@@ -87,8 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                 LoginUtil.USERID=id;
 
                 mDatabase.child("users").child(id).child("userId").setValue(id);
-
-                //나중에 아이디랑 닉네임을 받던가 해야될듯
 
                 Toast.makeText(getApplicationContext(), LoginUtil.USERID+"님 환영합니다.", Toast.LENGTH_LONG).show();
 

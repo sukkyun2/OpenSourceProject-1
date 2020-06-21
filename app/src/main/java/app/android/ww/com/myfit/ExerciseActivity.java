@@ -203,9 +203,9 @@ public class ExerciseActivity extends AppCompatActivity
                 //소모 칼로리
                 tvCalorie.setText(""+String.format("%d",mStepDetector/30)+"kcal");
                 //이동거리
-                tvDistance.setText(""+String.format("%.2f",distance/1000.00)+"km");
+                tvDistance.setText(""+String.format("%.2f",distance/100.00)+"km");
                 //속도
-                tvSpeed.setText(""+String.format("%.2f",(distance/100.0)/exerciseTime)+"km/h");
+                tvSpeed.setText(""+String.format("%.2f",(distance/10.0)/exerciseTime)+"km/h");
 
                 Log.d("exercise","이동거리 : "+ String.format("%f",distance/1000.00));
                 Log.d("exercise","속도 : "+ String.format("%f",(distance/100.0)/exerciseTime));
@@ -316,18 +316,15 @@ public class ExerciseActivity extends AppCompatActivity
         ExerciseRecord exerciseRecord = new ExerciseRecord(LoginUtil.USERID,Time,Distance,Calorie,Step,Date);
         LoginUtil.RECORD=exerciseRecord;
 
-
         new Handler().postDelayed(new Runnable()
         {
             @Override
-            public void run()
-            {
+            public void run(){
                 Intent intent = new Intent(getApplicationContext(), ExerciseResultActivity.class);
-//        intent.putExtra("RECORD",exerciseRecord);
-
                 startActivity(intent);
+
             }
-        }, 5000);
+        }, 3000);
     }
 
     private void submitImage() {

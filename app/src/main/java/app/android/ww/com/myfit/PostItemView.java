@@ -59,10 +59,7 @@ public class PostItemView extends LinearLayout {
         name.setText(name1);
     }
 
-    public void setDate(Date date1) {
-        String time = (new SimpleDateFormat("hh:mm:ss a").format(date1));
-        date.setText(time);
-    }
+    public void setDate(String date1) { date.setText(date1); }
 
     public void setProfile(int id) {
         profile.setImageResource(id);

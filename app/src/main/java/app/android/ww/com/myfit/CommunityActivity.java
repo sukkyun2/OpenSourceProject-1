@@ -1,5 +1,8 @@
 package app.android.ww.com.myfit;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,18 +10,22 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CommunityActivity extends AppCompatActivity {
@@ -30,20 +37,25 @@ public class CommunityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community);
+        System.out.println("시스템 시작");
 
         listView = findViewById(R.id.listView);
 
-//        postAdapter = new PostAdapter();
-//
-//        listView.setAdapter(postAdapter);
+        postAdapter = new PostAdapter();
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Post post = (Post) postAdapter.getItem(position);
-//                Toast.makeText(getApplicationContext(), "선택 : " + post.getName(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+//        downloadImg();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ExerciseRecord exerciseRecord = (ExerciseRecord) postAdapter.getItem(position);
+
+                Intent intent=new Intent(getApplicationContext(),PostDetail.class);
+                intent.putExtra("RECORD",exerciseRecord);
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -53,7 +65,8 @@ public class CommunityActivity extends AppCompatActivity {
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-//                Log.e("getFirebaseDatabase", "key: " + dataSnapshot.getChildrenCount());
+
+                postAdapter.items.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     String key = postSnapshot.getKey();
                     ExerciseRecord get = postSnapshot.getValue(ExerciseRecord.class);
@@ -64,10 +77,11 @@ public class CommunityActivity extends AppCompatActivity {
                     System.out.println("소모칼로리 :"+get.exerciseCalorie);
                     System.out.println("걸음수 :"+get.exerciseStep);
                     System.out.println("운동날짜 :"+get.exerciseDate);
-                    System.out.println("코멘트 :"+get.exerciseComment);
+//                    System.out.println("코멘트 :"+get.exerciseComment);
 
-//                    postAdapter.addItem(get);
-//                    Log.d("getFirebaseDatabase", "key: " + key);
+
+                    postAdapter.addItem(get);
+
                 }
 
                 listView.setAdapter(postAdapter);
@@ -79,12 +93,21 @@ public class CommunityActivity extends AppCompatActivity {
             }
         };
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("posts").child("fftzwhv");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("posts").child("hong");
         database.addValueEventListener(postListener);
+    }
 
-//        String sort="Date";
-//        Query sortbyTime = FirebaseDatabase.getInstance().getReference().child("posts").orderByChild(sort);
-//        sortbyTime.addValueEventListener(postListener);
+    private Bitmap imgRotate(Bitmap bmp){
+        int width = bmp.getWidth();
+        int height = bmp.getHeight();
+
+        Matrix matrix = new Matrix();
+        matrix.postRotate(90);
+
+        Bitmap resizedBitmap = Bitmap.createBitmap(bmp, 0, 0, width, height, matrix, true);
+        bmp.recycle();
+
+        return resizedBitmap;
     }
 
     class PostAdapter extends BaseAdapter {
@@ -126,11 +149,9 @@ public class CommunityActivity extends AppCompatActivity {
 
             ExerciseRecord item=items.get(position);
 
-//            System.out.println(item.toString());
-
-//            view.setName(item.getName());
-//            view.setDate(item.getExerciseDate());
-//            view.setProfile(item.getProfile());
+            view.setProfile(R.drawable.baseline_perm_identity_black_18dp);
+            view.setDate(item.getExerciseDate());
+            view.setName(item.getUserId());
 
             return view;
         }

@@ -4,4 +4,5 @@ public class LoginUtil {
 
     static String USERID;
     static ExerciseRecord RECORD;
+
 }
