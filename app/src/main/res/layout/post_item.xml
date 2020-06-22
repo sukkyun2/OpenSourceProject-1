@@ -26,6 +26,7 @@
             android:padding="10dp">
 
             <RelativeLayout
+                android:id="@+id/view"
                 android:layout_width="319dp"
                 android:layout_height="93dp">
 
@@ -66,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cookie_run_black"
                         android:text="가나다"
+                        android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
                     <TextView
@@ -85,6 +87,21 @@
                     android:layout_marginTop="40dp">
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/comment"
+                    android:layout_width="266dp"
+                    android:layout_height="33dp"
+                    android:layout_below="@+id/profile2"
+                    android:layout_alignStart="@+id/profile"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="11dp"
+                    android:fontFamily="@font/cookie_run_regular"
+                    android:text="TextView" />
 
             </RelativeLayout>
 

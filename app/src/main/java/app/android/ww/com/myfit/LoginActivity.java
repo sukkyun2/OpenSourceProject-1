@@ -18,6 +18,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * 프로그램명 : LoginActivity
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.08
+ * 프로그램 설명 :
+ * 맨 처음 어플을 실행시에 나오는 로그인 화면입니다.
+ * 아이디(or이메일)와 비밀번호를 입력하고 로그인이나 회원가입을 누르면
+ * 회원정보가 FireBase RealTime DataBase에 저장됩니다.
+ **/
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText mEmailView;

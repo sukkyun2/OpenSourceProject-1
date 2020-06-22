@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/baseline_face_black_18dp" />
+            app:srcCompat="@drawable/baseline_perm_identity_black_18dp" />
 
         <EditText
             android:id="@+id/email"

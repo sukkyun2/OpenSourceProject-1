@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.+'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
@@ -28,31 +28,23 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:+'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:+'
-
     // Google Map
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
-
     // Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-core:17.0.0'
-
     // implementation 'com.google.firebase:firebase-analytics:17.2.2'
     // add SDKs for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation 'com.google.firebase:firebase-database:19.1.0'
-
     //snackBar
     implementation 'com.google.android.material:material:1.1.0-alpha09'
-
     //firebase storage
     implementation 'com.google.firebase:firebase-storage:19.1.0'
     implementation 'com.firebaseui:firebase-ui-storage:3.1.0'
-
     // cardview
-    implementation "com.google.android.material:material:1.0.0"
-
-    //test
+    implementation 'com.google.android.material:material:1.0.0'
+    //Glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
 }

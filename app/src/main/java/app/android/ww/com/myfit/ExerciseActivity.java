@@ -68,6 +68,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+/**
+ * 프로그램명 : ExerciseActivity
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.02
+ * 프로그램 설명 :
+ * 운동에 대한 화면입니다.
+ * Google Map API를 사용하여 현재 위치를 잡고 운동 시 이동경로를 지도에 표시합니다.
+ * 타이머 기능을 사용하여 운동시간을 체크합니다.
+ * 스마트폰 안에 내장되어있는 가속도 센서를 이용하여 걸음수를 측정합니다.
+ * 운동 종료시 이동경로를 캡쳐하고 로컬저장소에 저장시키고 Cloud Storage에도 저장시킵니다.
+ * 운동 종료시 운동기록을 FireBase RealTime DataBase에 저장합니다.
+ **/
+
 public class ExerciseActivity extends AppCompatActivity
         implements SensorEventListener,
         OnMapReadyCallback,
@@ -150,8 +163,6 @@ public class ExerciseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         /** Google Map 관련 **/
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
-//                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_exercise);
         mLayout = findViewById(R.id.layout_map);
@@ -364,7 +375,6 @@ public class ExerciseActivity extends AppCompatActivity
         /** Google Map 관련 **/
         Log.d(TAG, "onStart");
         if (checkPermission()) {
-            Log.d(TAG, "onStart : call mFusedLocationClient.requestLocationUpdates");
             mFusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
             if (mMap!=null)
                 mMap.setMyLocationEnabled(true);

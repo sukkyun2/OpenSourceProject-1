@@ -3,6 +3,8 @@ package app.android.ww.com.myfit;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,7 +13,9 @@ import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,14 +37,20 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 프로그램명 : ExerciseResultActivity
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.05
+ * 프로그램 설명 :
+ * 운동하기(ExerciseActivity)의 결과화면을 출력하는 화면입니다.
+ * 메모를 입력받고 운동기록과 메모를 FireBase RealTime DataBase에 저장합니다.
+ **/
+
 public class ExerciseResultActivity extends AppCompatActivity {
 
     //firebase
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference mDatabase;
-
-    //firebase storage
-    private StorageReference storageRef;
 
     //map image
     ImageView imageView;
@@ -48,14 +58,13 @@ public class ExerciseResultActivity extends AppCompatActivity {
     //Record
     private ExerciseRecord exerciseRecord;
 
-    Button submitButton;
-
     TextView tvExerciseTime;
     TextView tvExerciseDistance;
     TextView tvExerciseCalorie;
     TextView tvExerciseStep;
     TextView tvExerciseDate;
 
+    String comment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,16 +74,10 @@ public class ExerciseResultActivity extends AppCompatActivity {
         connect_db();
         showRecord();
         setImageView();
-        submitPost();
+        writeComment();
+//        submitPost();
 
-//        submitButton=findViewById(R.id.submit_button);
-//        submitButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                submitPost();
-////                submitImage();
-//            }
-//        });
+
 
     }
 
@@ -120,47 +123,6 @@ public class ExerciseResultActivity extends AppCompatActivity {
     private void connect_db(){
         firebaseDatabase=FirebaseDatabase.getInstance();
         mDatabase=firebaseDatabase.getReference();
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        storageRef = storage.getReference();
-    }
-
-    private void submitImage() {
-        Date now = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
-
-        Uri file = Uri.fromFile(new File("/sdcard/"+LoginUtil.USERID+"_"+format.format(now)+".png"));
-        StorageReference mapRef = storageRef.child(file.getLastPathSegment());
-        System.out.println("/images"+file.getLastPathSegment());
-        UploadTask uploadTask = mapRef.putFile(file);
-
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                System.out.println("업로드 실패");
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                System.out.println("업로드 성공");
-            }
-        });
-    }
-
-    private Bitmap imgRotate(Bitmap bmp){
-        int width = bmp.getWidth();
-        int height = bmp.getHeight();
-
-        Matrix matrix = new Matrix();
-        matrix.postRotate(90);
-
-        Bitmap resizedBitmap = Bitmap.createBitmap(bmp, 0, 0, width, height, matrix, true);
-        bmp.recycle();
-
-        return resizedBitmap;
     }
 
     public Bitmap imgResize(Bitmap bitmap) {
@@ -177,7 +139,6 @@ public class ExerciseResultActivity extends AppCompatActivity {
     }
 
     private void submitPost() {
-//        LoginUtil.USERID="fftzwhv"; //임시로 셋팅
 
         final String userId = LoginUtil.USERID;
 
@@ -204,8 +165,8 @@ public class ExerciseResultActivity extends AppCompatActivity {
         Map<String, Object> recordValues=convertRecordToMap();
         Map<String, Object> childUpdates = new HashMap<>();
 
-        childUpdates.put("/posts/" + userId + "/" + key, recordValues);
-        childUpdates.put("/user-posts/" + userId + "/" + key, recordValues);
+//        childUpdates.put("/posts/" + userId + "/" + key, recordValues);
+        childUpdates.put("/posts/" + key, recordValues);
 
         mDatabase.updateChildren(childUpdates);
     }
@@ -219,9 +180,42 @@ public class ExerciseResultActivity extends AppCompatActivity {
         resultMap.put("exerciseCalorie",exerciseRecord.exerciseCalorie);
         resultMap.put("exerciseStep",exerciseRecord.exerciseStep);
         resultMap.put("exerciseDate",exerciseRecord.exerciseDate);
-//        resultMap.put("exerciseComment",comment.getText().toString());
+        resultMap.put("exerciseComment",comment);
 
         return resultMap;
+    }
+
+    private void writeComment(){
+
+        AlertDialog.Builder ad = new AlertDialog.Builder(ExerciseResultActivity.this);
+
+        ad.setTitle("메모를 입력해주세요");       // 제목 설정
+
+        final EditText et = new EditText(ExerciseResultActivity.this);
+        ad.setView(et);
+
+        // 취소 버튼 설정
+        ad.setPositiveButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        // 확인 버튼 설정
+        ad.setNegativeButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                comment = et.getText().toString();
+                submitPost();
+
+                dialog.dismiss();     //닫기
+                // Event
+            }
+        });
+
+        // 창 띄우기
+        ad.show();
     }
 
 }

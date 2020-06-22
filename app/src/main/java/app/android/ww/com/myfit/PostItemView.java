@@ -19,6 +19,15 @@ import java.util.Date;
 
 import androidx.annotation.Nullable;
 
+/**
+ * 프로그램명 : PostItemView
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.12
+ * 프로그램 설명 :
+ * 커뮤니티 기능(ComunityActivity)에서 커스텀 ListView에 적용될 운동기록들의 항목을 만드는 클래스입니다.
+ * 사용자의 이름, 사용자가 운동한 시간, 사용자의 프로필 사진, 메모가 포함되어있습니다.
+ **/
+
 public class PostItemView extends LinearLayout {
 
     /*
@@ -28,6 +37,7 @@ public class PostItemView extends LinearLayout {
     TextView name;  // 사용자의 이름
     TextView date; // 사용자가 운동한 시간
     ImageView profile; // 사용자 프로필 사진 모두 동일하게 생성
+    TextView comment;
 
     public PostItemView(Context context) {
         super(context);
@@ -40,11 +50,6 @@ public class PostItemView extends LinearLayout {
     }
 
     public void init(Context context) {
-        /*
-         * xml파일을 메모리에 객체로 만드는 과정
-         * person_item.xml에 있는 구성요소들을
-         * 이 객체(PersonItemView)에 inflation 시킨다.
-         */
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         layoutInflater.inflate(R.layout.post_item, this, true);
@@ -52,6 +57,7 @@ public class PostItemView extends LinearLayout {
         name = findViewById(R.id.name);
         date = findViewById(R.id.date);
         profile = findViewById(R.id.profile);
+        comment = findViewById(R.id.comment);
 
     }
 
@@ -64,6 +70,8 @@ public class PostItemView extends LinearLayout {
     public void setProfile(int id) {
         profile.setImageResource(id);
     }
+
+    public void setComment(String comment1){comment.setText(comment1);}
 
 
 }

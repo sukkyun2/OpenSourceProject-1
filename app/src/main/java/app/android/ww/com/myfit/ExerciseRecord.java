@@ -2,6 +2,12 @@ package app.android.ww.com.myfit;
 
 import java.io.Serializable;
 
+/**
+ * 프로그램명 : ExerciseRecord
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.09
+ * 프로그램 설명 : 운동하기(ExerciseActivity)에서 운동기록을 저장하는데 사용되는 VO(Value Object)입니다.
+ **/
 public class ExerciseRecord implements Serializable {
 
     String userId; //운동한 사람
@@ -10,7 +16,7 @@ public class ExerciseRecord implements Serializable {
     int exerciseCalorie; //소모 칼로리
     int exerciseStep; //걸음수
     String exerciseDate; //운동날짜
-//    String exerciseComment; //메모
+    String exerciseComment; //메모
 
     public ExerciseRecord(){}
 
@@ -27,9 +33,9 @@ public class ExerciseRecord implements Serializable {
 
     public void setUserId(String userId) { this.userId = userId; }
 
-//    public String getExerciseComment() { return exerciseComment; }
-//
-//    public void setExerciseComment(String exerciseComment) { this.exerciseComment = exerciseComment; }
+    public String getExerciseComment() { return exerciseComment; }
+
+    public void setExerciseComment(String exerciseComment) { this.exerciseComment = exerciseComment; }
 
     public long getExerciseTime() {
         return exerciseTime;

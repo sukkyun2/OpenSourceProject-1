@@ -15,6 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 프로그램명 : PostDetail
+ * 작성자 : 홍석균
+ * 작성일 : 2020.06.19
+ * 프로그램 설명 :
+ * 커뮤니티 기능(ComunityActivity)에서 ListView 각 항목들을 눌렀을 때 실행되는 화면입니다.
+ * 나를 포함한 다른사용자들의 운동기록들을 클릭했을 때 운동기록들과 운동하기에서 캡쳐된 이동경로 지도화면을 출력합니다.
+ * Glide(이미지 로딩 라이브러리)를 사용하여 Cloud Storage에서 지도 이미지를 받아오도록 하였습니다.
+ **/
+
 public class PostDetail extends AppCompatActivity {
 
     ExerciseRecord exerciseRecord;
@@ -26,12 +36,14 @@ public class PostDetail extends AppCompatActivity {
     TextView tvExerciseStep;
     TextView tvExerciseDate;
 
-    final ImageView imageView = findViewById(R.id.imageView);
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_detail);
+
+        imageView = findViewById(R.id.imageView);
 
         showRecord();
         setImageView();
