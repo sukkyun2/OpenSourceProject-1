@@ -7,6 +7,19 @@
     android:orientation="vertical"
     tools:context=".CommunityActivity">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_weight="1"
+        android:background="@color/common_google_signin_btn_text_light_focused"
+        android:fontFamily="@font/cookie_run_bold"
+        android:text="커뮤니티"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="30sp"
+        tools:text="커뮤니티" />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

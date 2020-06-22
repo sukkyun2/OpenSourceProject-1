@@ -16,7 +16,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="423c9ece-d639-4d3c-b866-0dd72a7683d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -25,21 +24,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/CommunityActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/CommunityActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseResultActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostItemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostItemView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_result.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/post_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,6 +33,28 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="activity_community.xml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml">
+                <provider editor-type-id="text-editor">
+                  <state relative-caret-position="399">
+                    <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+                  </state>
+                </provider>
+                <provider selected="true" editor-type-id="android-designer2">
+                  <state />
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -71,37 +79,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ExerciseResultActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseResultActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2131">
-              <caret line="167" selection-start-line="167" selection-end-line="167" selection-end-column="73" />
+            <state relative-caret-position="76">
+              <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#setImageView#0;class#ExerciseResultActivity#0" />
                 <element signature="method#showRecord#0;class#ExerciseResultActivity#0" />
                 <element signature="method#connect_db#0;class#ExerciseResultActivity#0" />
                 <element signature="method#imgResize#0;class#ExerciseResultActivity#0" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_exercise.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="187" column="30" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
@@ -114,22 +127,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_post_detail.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="5472">
-              <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
             </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseRecord.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExerciseActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10526">
+              <caret line="659" column="37" selection-start-line="659" selection-start-column="37" selection-end-line="659" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExerciseRecord.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="684">
               <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
@@ -138,38 +157,21 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-909">
+            <state relative-caret-position="19">
               <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java">
+      <file leaf-file-name="activity_exercise_result.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_result.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="659" column="37" lean-forward="true" selection-start-line="659" selection-start-column="37" selection-end-line="659" selection-end-column="37" />
-              <folding>
-                <element signature="e#17957#20372#0" />
-                <element signature="e#21478#22608#0" />
-                <element signature="e#22614#23620#0" />
-                <element signature="e#23626#23942#0" />
-                <element signature="e#23949#24650#0" />
-                <element signature="e#25533#26106#0" />
-                <element signature="e#26112#28334#0" />
-                <element signature="e#28723#29102#0" expanded="true" />
-                <element signature="e#29101#29102#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="377">
+              <caret line="286" column="7" selection-start-line="286" selection-start-column="7" selection-end-line="286" selection-end-column="7" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostItemView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostItemView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-            </state>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2526,9 +2528,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_record.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sadssd.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/dsadasd.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_dsadasd.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java" />
@@ -2543,6 +2543,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/CommunityActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml" />
       </list>
     </option>
   </component>
@@ -2584,13 +2586,13 @@
               <item name="OpenSourceProject-1" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="OpenSourceProject-1" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="OpenSourceProject-1" type="1abcf292:AndroidViewProjectNode" />
@@ -3057,7 +3059,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592751573668</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2020.06.22">
+      <created>1592844326016</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592844326016</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3139,7 +3148,8 @@
     <MESSAGE value="6월 2주차 버전" />
     <MESSAGE value="2020.06.19" />
     <MESSAGE value="2020.06.21" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020.06.21" />
+    <MESSAGE value="2020.06.22" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020.06.22" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3191,13 +3201,6 @@
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-183" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/result.png" />
@@ -3268,46 +3271,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="187" column="30" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_result.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="286" column="7" selection-start-line="286" selection-start-column="7" selection-end-line="286" selection-end-column="7" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
         <state />
@@ -3346,24 +3309,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/CommunityActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostItemView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        <state relative-caret-position="152">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -3374,26 +3323,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginUtil.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostItemView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="760">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_result.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-909">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state relative-caret-position="377">
+          <caret line="286" column="7" selection-start-line="286" selection-start-column="7" selection-end-line="286" selection-end-column="7" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2131">
-          <caret line="167" selection-start-line="167" selection-end-line="167" selection-end-column="73" />
+        <state relative-caret-position="76">
+          <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#setImageView#0;class#ExerciseResultActivity#0" />
             <element signature="method#showRecord#0;class#ExerciseResultActivity#0" />
             <element signature="method#connect_db#0;class#ExerciseResultActivity#0" />
@@ -3402,28 +3370,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseRecord.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="19">
+          <caret line="187" column="30" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_community.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/PostDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/CommunityActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1463">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="659" column="37" lean-forward="true" selection-start-line="659" selection-start-column="37" selection-end-line="659" selection-end-column="37" />
-          <folding>
-            <element signature="e#17957#20372#0" />
-            <element signature="e#21478#22608#0" />
-            <element signature="e#22614#23620#0" />
-            <element signature="e#23626#23942#0" />
-            <element signature="e#23949#24650#0" />
-            <element signature="e#25533#26106#0" />
-            <element signature="e#26112#28334#0" />
-            <element signature="e#28723#29102#0" expanded="true" />
-            <element signature="e#29101#29102#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="10526">
+          <caret line="659" column="37" selection-start-line="659" selection-start-column="37" selection-end-line="659" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/android/ww/com/myfit/ExerciseRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
